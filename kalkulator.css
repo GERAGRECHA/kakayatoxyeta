@@ -24,9 +24,11 @@ display: flex;
 }
 .solevaya {
     width: 28px;
+    cursor: pointer;
 }
 .krek{
     display: flex;
+    cursor: pointer;
 }
 .geroin{width: 28px;}
 

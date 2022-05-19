@@ -1,33 +1,17 @@
-const dablyat = document.querySelectorAll(".solevaya")
-const dasuka = document.querySelectorAll(".geroin")
+const dablyat = document.querySelector(".trigan")
 const oi = document.querySelector(".amfetamin")
-let aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+let live = ''
 
-dablyat.forEach((el, i) =>{
-    el.addEventListener("click", ()=>{
- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=el.textContent
- dasuka.forEach((element, i) => {
-     element.addEventListener("click",()=>{
-     if (element.textContent == "+"){
-        el.addEventListener("click",()=> {
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa+el
-             })
-     } else if (element.textContent == "-"){
-        el.addEventListener("click",()=> {
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-el
-             })
-     } else if (element.textContent == "*"){
-        el.addEventListener("click",()=> {
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*el
-             })
-     } else if (element.textContent == ":"){
-        el.addEventListener("click",()=> {
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/el
-             })
-     } else if (element.textContent == "="){
-        oi.innerHTML =  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-     }
-    })
- })
-    })
-})
+dablyat.addEventListener("click", (e) => {
+   if (e.target.closest(".solevaya")) {
+      live += e.target.textContent
+      oi.innerHTML = live
+   } else if (e.target.closest(".geroin") && live.substr(0) != '' && e.target.textContent != "=" && live.substr(live.length - 1) != "-" && live.substr(live.length - 1) != "+" && live.substr(live.length - 1) != "*" && live.substr(live.length - 1) != "/") {
+      live += e.target.textContent
+      oi.innerHTML = live
+   } else if (live.substr(1) != '' && live.substr(live.length - 1) != "-" && live.substr(live.length - 1) != "+" && live.substr(live.length - 1) != "*" && live.substr(live.length - 1) != "/") {
+      console.log(typeof live);
+      console.log(live);
+      oi.innerHTML = eval(live)
+   }
+}) 
