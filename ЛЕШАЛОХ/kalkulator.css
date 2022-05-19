@@ -1,0 +1,34 @@
+body {
+    height: 29px;
+    background-color: #D3B0D0;
+}
+.mefedron {
+    width: 80%;
+    height: 300px;
+    background-image: url(tresh.png); 
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.kokain{
+    max-width: 400px;
+    width: 100%;
+    border: 20px solid #6C2666;
+    border-radius: 37px;
+display: flex;
+}
+.extazi{
+    display: flex;
+    justify-content: space-between;
+    max-width: 150px;
+    flex-wrap: wrap;
+}
+.solevaya {
+    width: 28px;
+    cursor: pointer;
+}
+.krek{
+    display: flex;
+    cursor: pointer;
+}
+.geroin{width: 28px;}
+
